@@ -24,7 +24,7 @@ Then it's just a case of including the following scripts on your page, best at t
 
 Type: `integer`
 
-Default: '0'
+Default: 0
 
 Description: Specify which tab to open by default using 0-based position
 
