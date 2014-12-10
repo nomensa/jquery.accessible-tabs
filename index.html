@@ -112,48 +112,46 @@ $(".example-b").accTabs({
         <script src="gh-pages/js/vendor/rainbow/language/javascript.js"></script>
         <script src="jquery.accTabs.js"></script>
         <script>
-            $(document).ready( function(){
-                $(function() {
-                    $('.example-a').accTabs();
+            $(function() {
+                $('.example-a').accTabs();
 
-                    $('.example-b').accTabs({
+                $('.example-b').accTabs({
+                    defaultTab: 1
+                });
+
+                (function() {
+                    var target = $('.example-c'),
+                        buttonContainer = $('<div />'),
+                        buttonRebuild = $('<button class="js-btn">Rebuild</button>'),
+                        buttonDestroy = $('<button class="js-btn">Destroy</button>');
+
+                    target.accTabs({
                         defaultTab: 1
                     });
 
-                    (function() {
-                        var target = $('.example-c'),
-                            buttonContainer = $('<div />'),
-                            buttonRebuild = $('<button class="js-btn">Rebuild</button>'),
-                            buttonDestroy = $('<button class="js-btn">Destroy</button>');
+                    buttonRebuild.attr('disabled', 'disabled');
 
-                        target.accTabs({
-                            defaultTab: 1
-                        });
+                    buttonRebuild.on('click', function(event) {
+                        event.preventDefault();
 
-                        buttonRebuild.attr('disabled', 'disabled');
+                        target.data('plugin_accTabs').rebuild();
 
-                        buttonRebuild.on('click', function(event) {
-                            event.preventDefault();
+                        $(this).attr('disabled', 'disabled');
+                        buttonDestroy.removeAttr('disabled');
+                    });
 
-                            target.data('plugin_accTabs').rebuild();
+                    buttonDestroy.on('click', function(event) {
+                        event.preventDefault();
 
-                            $(this).attr('disabled', 'disabled');
-                            buttonDestroy.removeAttr('disabled');
-                        });
+                        target.data('plugin_accTabs').destroy();
 
-                        buttonDestroy.on('click', function(event) {
-                            event.preventDefault();
+                        $(this).attr('disabled', 'disabled');
+                        buttonRebuild.removeAttr('disabled');
+                    });
 
-                            target.data('plugin_accTabs').destroy();
-
-                            $(this).attr('disabled', 'disabled');
-                            buttonRebuild.removeAttr('disabled');
-                        });
-
-                        buttonContainer.append(buttonDestroy, buttonRebuild);
-                        target.after(buttonContainer);
-                    })();
-                });
+                    buttonContainer.append(buttonDestroy, buttonRebuild);
+                    target.after(buttonContainer);
+                })();
             });
         </script>
     </body>
