@@ -1,0 +1,117 @@
+/**
+ * demo.css
+ *
+ * Description: Demo styles for the plugin examples
+ * Author: Nomensa
+ *
+ */
+.js-tabs {
+    margin: 1em 0;
+}
+
+/* Tabs control text */
+.js-tabs_control-text {
+    direction: ltr;
+    left: -999em;
+    position: absolute;
+}
+
+/* Tabs control */
+.js-tabs .js-tabs_control {
+    float: left;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 1000;
+}
+
+.js-tabs .js-tabs_control li {
+    float: left;
+    margin: 0 10px 0 0;
+    padding: 0;
+    position: relative;
+}
+
+.js-tabs .js-tabs_control button {
+    background: #ddd;
+    border: 1px #ddd solid;
+    border-width: 1px 1px 0;
+    cursor: pointer;
+    display:block;
+    margin: 0;
+    padding: 8px 0.5em 10px;
+    position: relative;
+    outline: 0;
+    text-decoration: none;
+}
+
+.js-tabs .js-tabs_control button:hover,
+.js-tabs .js-tabs_control button:focus,
+.js-tabs .js-tabs_control button:active {
+    border-color: #000;
+    text-decoration: underline;
+}
+
+/* Selected tabs control */
+.js-tabs .js-tabs_control .js-tabs_control-item--active,
+.js-tabs .js-tabs_control .js-tabs_control-item--active:focus,
+.js-tabs .js-tabs_control .js-tabs_control-item--active:active {
+    background: #fafafa;
+    border: 1px solid #999;
+    border-bottom: none;
+    color: #333;
+    top: 1px;
+    z-index: 1000;
+}
+
+/* Tabs panel */
+.js-tabs .js-tabs_panel {
+    background-color: #fafafa;
+    border: 1px solid #999;
+    color: #333;
+    clear: left;
+    display: block;
+    overflow: auto;
+    position: relative;
+    padding: 0 1em 1em;
+    visibility: visible;
+    z-index: 5;
+}
+
+.js-tabs .js-tabs_panel:focus {
+    outline: 1px dotted #999;
+}
+
+.js-tabs .js-tabs_panel h2 {
+    display: inline-block;
+}
+
+.js-tabs .js-tabs_panel h2:focus {
+    outline: 1px dotted #999;
+}
+
+.js-btn,
+.js-hide-show_btn {
+    background: rgb(255,255,255); /* Fallback */
+    background: linear-gradient(to bottom,
+      rgba(255,255,255,1) 0%,
+      rgba(243,243,243,1) 50%,
+      rgba(237,237,237,1) 51%,
+      rgba(243,243,243,1) 100%);
+    border: 1px solid #dfdfdf;
+    border-radius: 5px;
+    box-shadow:
+      0 1px 3px rgba(000,000,000,0.1),
+      inset 0 0 3px rgba(255,255,255,1);
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1em;
+    margin: 1em 5px;
+    padding: 5px 1em;
+    text-shadow:
+      0 -1px 0 rgba(000,000,000,0.2),
+      0 1px 0 rgba(255,255,255,1);
+}

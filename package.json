@@ -1,0 +1,32 @@
+{
+  "name": "jquery-accessible-tabs",
+  "version": "0.1.0",
+  "description": "Creates accessible tabs - a single content area with multiple panels",
+  "author": "Nomensa <tech@nomensa.com>",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/nomensa/jquery.accessible-tabs"
+  },
+  "devDependencies": {
+    "grunt": "0.4.2",
+    "grunt-contrib-connect": "~0.8.0",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-contrib-uglify": "~0.5.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-jscs": "~0.6.1",
+    "grunt-karma": "~0.8.0",
+    "grunt-version": "~0.3.0",
+    "karma": "~0.12.0",
+    "karma-jasmine": "~0.2.2",
+    "karma-phantomjs-launcher": "~0.1.2",
+    "karma-coverage": "~0.1.5",
+    "load-grunt-tasks": "~0.2.1",
+    "time-grunt": "~0.2.8"
+  },
+  "engines": {
+    "node": ">= 0.10.x"
+  },
+  "scripts": {
+    "test": "grunt test --verbose"
+  }
+}

@@ -1,0 +1,19 @@
+{
+    "name": "jquery.accessible-tabs",
+    "version": "0.1.0",
+    "authors": [
+        "(Nomensa <tech@nomensa.com>)"
+    ],
+    "description": "Creates accessible tabs - a single content area with multiple panels",
+    "main": "jquery.tabs.js",
+    "keywords": [
+        "accessible",
+        "tabs",
+        "jquery"
+    ],
+    "license": "MIT",
+    "homepage": "http://github.com/nomensa/jquery.accessible-tabs",
+    "dependencies": {
+        "jquery": "~1.11.1"
+    }
+}
