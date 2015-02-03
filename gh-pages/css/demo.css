@@ -27,6 +27,8 @@
 }
 
 .js-tabs .js-tabs_control li {
+    background: #ddd;
+    border-width: 1px 1px 0;
     float: left;
     margin: 0 10px 0 0;
     padding: 0;
@@ -34,12 +36,9 @@
 }
 
 .js-tabs .js-tabs_control button {
-    background: #ddd;
-    border: 1px #ddd solid;
-    border-width: 1px 1px 0;
+    background: transparent;
+    border: none;
     cursor: pointer;
-    display:block;
-    margin: 0;
     padding: 8px 0.5em 10px;
     position: relative;
     outline: 0;
