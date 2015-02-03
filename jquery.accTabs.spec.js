@@ -117,15 +117,15 @@ describe('accessible-tabs', function() {
                 $('> ul > li', testElement).each(function() {
                     triggerKeyDown($(this), 37);
 
-                    expect($(this).find('> button').hasClass('js-tabs_control-item--active')).toBe(false);
+                    expect($(this).find('> button').parent('li').hasClass('js-tabs_control-item--active')).toBe(false);
                     expect($(this).find('> button').attr('aria-selected')).toBe('false');
 
                     // Check if there is a previous control tab or move the last
                     if ($(this).prev().length !== 0) {
-                        expect($(this).prev().find('> button').hasClass('js-tabs_control-item--active')).toBe(true);
+                        expect($(this).prev().find('> button').parent('li').hasClass('js-tabs_control-item--active')).toBe(true);
                         expect($(this).prev().find('> button').attr('aria-selected')).toBe('true');
                     } else {
-                        expect($(this).parent().find('li:last > button').hasClass('js-tabs_control-item--active')).toBe(true);
+                        expect($(this).parent().find('li:last > button').parent('li').hasClass('js-tabs_control-item--active')).toBe(true);
                         expect($(this).parent().find('li:last > button').attr('aria-selected')).toBe('true');
                     }
                 });
@@ -135,15 +135,15 @@ describe('accessible-tabs', function() {
                 $('> ul > li', testElement).each(function() {
                     triggerKeyDown($(this), 38);
 
-                    expect($(this).find('> button').hasClass('js-tabs_control-item--active')).toBe(false);
+                    expect($(this).find('> button').parent('li').hasClass('js-tabs_control-item--active')).toBe(false);
                     expect($(this).find('> button').attr('aria-selected')).toBe('false');
 
                     // Check if there is a previous control tab or move the last
                     if ($(this).prev().length !== 0) {
-                        expect($(this).prev().find('> button').hasClass('js-tabs_control-item--active')).toBe(true);
+                        expect($(this).prev().find('> button').parent('li').hasClass('js-tabs_control-item--active')).toBe(true);
                         expect($(this).prev().find('> button').attr('aria-selected')).toBe('true');
                     } else {
-                        expect($(this).parent().find('li:last > button').hasClass('js-tabs_control-item--active')).toBe(true);
+                        expect($(this).parent().find('li:last > button').parent('li').hasClass('js-tabs_control-item--active')).toBe(true);
                         expect($(this).parent().find('li:last > button').attr('aria-selected')).toBe('true');
                     }
                 });
@@ -153,15 +153,15 @@ describe('accessible-tabs', function() {
                 $('> ul > li', testElement).each(function() {
                     triggerKeyDown($(this), 39);
 
-                    expect($(this).find('> button').hasClass('js-tabs_control-item--active')).toBe(false);
+                    expect($(this).find('> button').parent('li').hasClass('js-tabs_control-item--active')).toBe(false);
                     expect($(this).find('> button').attr('aria-selected')).toBe('false');
 
                     // Check if there is a next control tab or move the first
                     if ($(this).next().length !== 0) {
-                        expect($(this).next().find('> button').hasClass('js-tabs_control-item--active')).toBe(true);
+                        expect($(this).next().find('> button').parent('li').hasClass('js-tabs_control-item--active')).toBe(true);
                         expect($(this).next().find('> button').attr('aria-selected')).toBe('true');
                     } else {
-                        expect($(this).parent().find('li:first > button').hasClass('js-tabs_control-item--active')).toBe(true);
+                        expect($(this).parent().find('li:first > button').parent('li').hasClass('js-tabs_control-item--active')).toBe(true);
                         expect($(this).parent().find('li:first > button').attr('aria-selected')).toBe('true');
                     }
                 });
@@ -171,15 +171,15 @@ describe('accessible-tabs', function() {
                 $('> ul > li', testElement).each(function() {
                     triggerKeyDown($(this), 40);
 
-                    expect($(this).find('> button').hasClass('js-tabs_control-item--active')).toBe(false);
+                    expect($(this).find('> button').parent('li').hasClass('js-tabs_control-item--active')).toBe(false);
                     expect($(this).find('> button').attr('aria-selected')).toBe('false');
 
                     // Check if there is a next control tab or move the first
                     if ($(this).next().length !== 0) {
-                        expect($(this).next().find('> button').hasClass('js-tabs_control-item--active')).toBe(true);
+                        expect($(this).next().find('> button').parent('li').hasClass('js-tabs_control-item--active')).toBe(true);
                         expect($(this).next().find('> button').attr('aria-selected')).toBe('true');
                     } else {
-                        expect($(this).parent().find('li:first > button').hasClass('js-tabs_control-item--active')).toBe(true);
+                        expect($(this).parent().find('li:first > button').parent('li').hasClass('js-tabs_control-item--active')).toBe(true);
                         expect($(this).parent().find('li:first > button').attr('aria-selected')).toBe('true');
                     }
                 });
@@ -195,7 +195,7 @@ describe('accessible-tabs', function() {
         });
 
         it('should add a class and attributes to the first tab control', function() {
-            expect(testElement.find('button:first').hasClass('js-tabs_control-item--active')).toBe(true);
+            expect(testElement.find('button:first').parent('li').hasClass('js-tabs_control-item--active')).toBe(true);
             expect(testElement.find('button:first').attr('aria-selected')).toBe('true');
         });
 
@@ -303,7 +303,7 @@ describe('accessible-tabs', function() {
                 defaultTab: 2
             });
 
-            expect(testElement.find('button:eq(2)').hasClass('js-tabs_control-item--active')).toBe(true);
+            expect(testElement.find('button:eq(2)').parent('li').hasClass('js-tabs_control-item--active')).toBe(true);
             expect(testElement.find('button:eq(2)').attr('aria-selected')).toBe('true');
             expect(testElement.find('div:eq(2)').css('display')).toBe('block');
             expect(testElement.find('div:eq(2)').attr('aria-hidden')).toBe('false');
@@ -322,7 +322,7 @@ describe('accessible-tabs', function() {
                 controlActiveClass: 'js-tabs_control-item--custom'
             });
 
-            expect(testElement.find('[aria-selected="true"]').hasClass('js-tabs_control-item--custom')).toBe(true);
+            expect(testElement.find('[aria-selected="true"]').parent('li').hasClass('js-tabs_control-item--custom')).toBe(true);
         });
 
         it('should set the custom controls text', function() {

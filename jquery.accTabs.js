@@ -176,7 +176,7 @@
             if ($('[aria-selected="true"]', this.controlsWrapper).length !== 0) {
                 $('[aria-selected="true"]', this.controlsWrapper)
                     .attr('aria-selected', 'false')
-                    .removeClass(activeTabClass);
+                    .parent('li').removeClass(activeTabClass);
 
                 $('> [aria-hidden="false"]', this.element)
                     .attr('aria-hidden', 'true')
@@ -184,9 +184,8 @@
             }
 
             // Update state of newly selected tab control
-            $(tab, this.element)
-                .addClass(activeTabClass)
-                .attr('aria-selected', 'true');
+            $(tab, this.element).attr('aria-selected', 'true');
+            $(tab, this.element).parent('li').addClass(activeTabClass);
 
             // Update state of newly selected tab panel
             $(tabPanelId, this.element)
