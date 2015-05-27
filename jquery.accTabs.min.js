@@ -3,7 +3,7 @@
  *
  * @description: Creates accessible tabs - a single content area with multiple panels
  * @source: https://github.com/nomensa/jquery.accessible-tabs.git
- * @version: '0.1.0'
+ * @version: '0.1.1'
  *
  * @author: Nomensa
  * @license: licenced under MIT - http://opensource.org/licenses/mit-license.php
