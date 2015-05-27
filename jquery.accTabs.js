@@ -63,7 +63,7 @@
                 var tabId = self.options.tabControlId + counter + index,
                     panelId = self.options.tabPanelId + counter + index,
                     heading = $($(value).prev()),
-                    headingText = heading.text(),
+                    headingText = heading.html(),
                     liMarkup = $('<li role="presentation">' +
                                      '<button aria-selected="false" data-controls="' + panelId + '" id="' + tabId + '" role="tab">' +
                                          headingText +
