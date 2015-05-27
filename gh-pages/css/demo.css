@@ -52,6 +52,17 @@
     text-decoration: underline;
 }
 
+.js-tabs .js-tabs_control .badge {
+    background-color: #C00000;
+    border-radius: 10px;
+    font-size: 80%;
+    color: #fff;
+    display: inline-block;
+    margin-left: 5px;
+    padding: 0 8px;
+    text-decoration: none;
+}
+
 /* Selected tabs control */
 .js-tabs .js-tabs_control .js-tabs_control-item--active,
 .js-tabs .js-tabs_control .js-tabs_control-item--active:focus,
