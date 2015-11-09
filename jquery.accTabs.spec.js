@@ -205,6 +205,22 @@ describe('accessible-tabs', function() {
         });
     });
 
+    describe('- createHandleClick method', function() {
+        it('should trigger "callbackTabActivated" once a tab has been clicked', function() {
+            var activated = false;
+
+            testElement.accTabs({
+                callbackTabActivated: function() {
+                    activated = true; 
+                }
+            });
+
+            var button = testElement.find('.js-tabs_control li:nth-child(2) button');
+            button.trigger('click');
+            expect(activated).toBe(true);
+        });     
+    });
+
     describe('- rebuild method', function() {
 
         beforeEach(function() {

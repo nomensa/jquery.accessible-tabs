@@ -1,6 +1,6 @@
 {
   "name": "jquery-accessible-tabs",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Creates accessible tabs - a single content area with multiple panels",
   "author": "Nomensa <tech@nomensa.com>",
   "repository": {

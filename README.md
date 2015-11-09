@@ -104,6 +104,20 @@ Default: 'js-tabs_panel--'
 
 Description: Ids for tab panels should start with the following string
 
+### panelActiveClass
+
+Type: `string`
+
+Default: 'js-tabs_panel--active'
+
+Description: Class to be applied to the active tab panel
+
+### callbackTabActivated
+
+Type: `function`
+
+Description: Callback when a tab is clicked
+
 
 ## Development
 
