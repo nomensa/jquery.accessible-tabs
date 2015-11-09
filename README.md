@@ -112,6 +112,12 @@ Default: 'js-tabs_panel--active'
 
 Description: Class to be applied to the active tab panel
 
+### callbackTabActivated
+
+Type: `function`
+
+Description: Callback when a tab is clicked
+
 
 ## Development
 

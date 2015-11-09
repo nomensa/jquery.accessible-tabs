@@ -3,7 +3,7 @@
  *
  * @description: Creates accessible tabs - a single content area with multiple panels
  * @source: https://github.com/nomensa/jquery.accessible-tabs.git
- * @version: '0.1.1'
+ * @version: '0.1.2'
  *
  * @author: Nomensa
  * @license: licenced under MIT - http://opensource.org/licenses/mit-license.php
@@ -41,7 +41,12 @@
         // Class to be applied to the tab panel
         tabPanelClass: 'js-tabs_panel',
         // Ids for tab panels should start with the following string
-        tabPanelId: 'js-tabs_panel--'
+        tabPanelId: 'js-tabs_panel--',
+        // Callback when the tab is activated
+        callbackTabActivated: function() {
+            console.log('here');
+        }
+
     };
 
     function AccTabs(element, options) {
@@ -123,6 +128,7 @@
                 event.preventDefault();
 
                 self.activateTab(this);
+                self.options.callbackTabActivated();
             };
             return self.handleClick;
         }
