@@ -43,10 +43,7 @@
         // Ids for tab panels should start with the following string
         tabPanelId: 'js-tabs_panel--',
         // Callback when the tab is activated
-        callbackTabActivated: function() {
-            console.log('here');
-        }
-
+        callbackTabActivated: function() {}
     };
 
     function AccTabs(element, options) {
