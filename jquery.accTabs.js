@@ -32,6 +32,8 @@
         controlsText: 'Use the tab and enter or arrow keys to move between tabs',
         // Class to apply to the controls text element
         controlsTextClass: 'js-tabs_control-text',
+        // A class applied to the active panel
+        panelActiveClass: 'js-tabs_panel--active',
         // Class to apply the controls list
         tabControlsClass: 'js-tabs_control',
         // Ids for tab controls should start with the following string
@@ -178,9 +180,12 @@
                     .attr('aria-selected', 'false')
                     .parent('li').removeClass(activeTabClass);
 
+                // Hide inactive panels
                 $('> [aria-hidden="false"]', this.element)
                     .attr('aria-hidden', 'true')
-                    .hide();
+                    .hide()
+                    // Remove active class
+                    .removeClass(this.options.panelActiveClass);
             }
 
             // Update state of newly selected tab control
@@ -190,7 +195,9 @@
             // Update state of newly selected tab panel
             $(tabPanelId, this.element)
                 .attr('aria-hidden', 'false')
-                .show();
+                .show()
+                // Add active class
+                .addClass(this.options.panelActiveClass);
         }
     };
 

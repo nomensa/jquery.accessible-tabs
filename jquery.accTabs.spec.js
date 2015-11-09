@@ -270,6 +270,7 @@ describe('accessible-tabs', function() {
             expect(testElement2.find('> div').attr('role')).toBe(undefined);
             expect(testElement2.find('> div').attr('style')).toBe(undefined);
             expect(testElement2.find('> div').hasClass('js-tabs_panel')).toBe(false);
+            expect(testElement2.find('> div:first').hasClass('js-tabs_panel--custom')).toBe(false);
         });
 
         it('should trigger "callbackDestroy" once the plugin has been destroyed', function() {
@@ -323,6 +324,24 @@ describe('accessible-tabs', function() {
             });
 
             expect(testElement.find('[aria-selected="true"]').parent('li').hasClass('js-tabs_control-item--custom')).toBe(true);
+        });
+
+        describe('the active panel classes', function() {
+            var panelActiveClass = 'js-tabs_panel--custom';
+
+            beforeEach(function() {
+                testElement.accTabs({
+                    panelActiveClass: panelActiveClass
+                });
+            });
+
+            it('should set the custom class on the active panel', function() {
+                expect(testElement.find('div:first').hasClass(panelActiveClass)).toBe(true);
+            });
+
+            it('should not set the custom class on an inactive panel', function() {
+                expect(testElement.find('div:eq(1)').hasClass(panelActiveClass)).toBe(false);
+            });
         });
 
         it('should set the custom controls text', function() {
