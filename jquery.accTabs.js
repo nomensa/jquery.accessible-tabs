@@ -42,7 +42,7 @@
         tabPanelClass: 'js-tabs_panel',
         // Ids for tab panels should start with the following string
         tabPanelId: 'js-tabs_panel--',
-        // Callback when the tab is activated
+        // Callback when the tab is activated, the event handler is passed to the callback.
         callbackTabActivated: function() {}
     };
 
@@ -125,7 +125,7 @@
                 event.preventDefault();
 
                 self.activateTab(this);
-                self.options.callbackTabActivated();
+                self.options.callbackTabActivated(event);
             };
             return self.handleClick;
         }

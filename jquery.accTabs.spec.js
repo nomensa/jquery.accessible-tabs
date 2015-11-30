@@ -208,16 +208,18 @@ describe('accessible-tabs', function() {
     describe('- createHandleClick method', function() {
         it('should trigger "callbackTabActivated" once a tab has been clicked', function() {
             var activated = false;
-
+            var eventHandler = false;
             testElement.accTabs({
-                callbackTabActivated: function() {
-                    activated = true; 
+                callbackTabActivated: function(activateEvent) {
+                    activated = true;
+                    eventHandler = activateEvent;
                 }
             });
 
             var button = testElement.find('.js-tabs_control li:nth-child(2) button');
             button.trigger('click');
             expect(activated).toBe(true);
+            expect(typeof(eventHandler)).toBe('object');
         });     
     });
 
