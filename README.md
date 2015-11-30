@@ -118,6 +118,7 @@ Type: `function`
 
 Description: Callback when a tab is clicked
 
+Arguments: `[event]`. The triggering event is passed to the callback.
 
 ## Development
 
