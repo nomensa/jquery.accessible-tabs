@@ -205,7 +205,7 @@ describe('accessible-tabs', function() {
         });
     });
 
-    describe('- rebuild method', function() {
+    xdescribe('- rebuild method', function() {
 
         beforeEach(function() {
             testElement2 = $(markUp);
@@ -290,6 +290,11 @@ describe('accessible-tabs', function() {
             el.data('plugin_accTabs').destroy();
 
             expect(destroyed).toBe(true);
+        });
+
+        it('should remove the plugin data', function() {
+
+            expect(testElement.data('plugin_accTabs')).toEqual(undefined);
         });
     });
 
