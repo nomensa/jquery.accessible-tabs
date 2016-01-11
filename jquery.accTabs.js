@@ -218,6 +218,7 @@
         $('> .' + this.options.controlsTextClass, this.element).remove();
         $('> .' + this.options.tabControlsClass, this.element).remove();
         $('> div', this.element).prev().removeAttr('style');
+        $(this.element).removeData('plugin_' + pluginName);
 
         $('> div', this.element).each(function(index, value) {
             $(value)
